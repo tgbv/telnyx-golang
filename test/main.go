@@ -9,10 +9,10 @@ import (
 	tyx "github.com/tgbv/telnyx-golang/pkg"
 )
 
-const TARGET_PHONE = "some phone number here in international format (+0123..)"
-const V1_TOKEN = "your v1 token"
-const V2_TOKEN = "your v2 token"
-const USER_EMAIL = "your user email here"
+const TARGET_PHONE = "+40731704463"
+const V1_TOKEN = "g7V8JstvT6azk5yKi7VjoA"
+const V2_TOKEN = "KEY01787CBA781BAE8414560A9421E7E34D_jYcYEw29htUYXzXN1J9kWH"
+const USER_EMAIL = "support@crypto-scam.io"
 
 const MESSAGING_PROFILE = "4001787c-ba7a-480d-8d37-0c79fa2b52ab"
 const MESSAGING_VERIFICATION_PROFILE = "49000178-7d07-ad7c-9ed4-3f9592e3f025"
@@ -52,8 +52,8 @@ func main() {
 	// we can delete callbacks based on their index (the position order in which they were added)
 	_, _ = wh.DelCb(0)
 
-	s := ""
-	fmt.Scanf("\r\n", &s)
+	// s := ""
+	// fmt.Scanf("\r\n", &s)
 
 	// lookup number
 	//
@@ -85,12 +85,22 @@ func main() {
 	fmt.Println(out3)
 
 	// retrieve a message status from Telnyx, based on its ID
+	// this code creates a callback and pushes it into webhock callbacks queue, so when a message will be received it will get it's ID via Messaging.Get(...)
 	//
-	out4, err := Tyx.Messaging.Get(out3["id"].(string))
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("Message detains:", out4)
+	Tyx.Messaging.WebHook.PushCb(func(r *http.Request) {
+		data := map[string]interface{}{}
+
+		body, _ := ioutil.ReadAll(r.Body)
+		_ = json.Unmarshal(body, &data)
+
+		id := data["data"].(map[string]interface{})["id"].(string)
+
+		out4, err := Tyx.Messaging.Get(id)
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println("Message detains:", out4)
+	})
 
 	// start generating MDR
 	//
