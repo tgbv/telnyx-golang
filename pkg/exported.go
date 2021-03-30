@@ -17,7 +17,7 @@ type telnyx struct {
 	Config     internal.Config
 	httpClient http.Client
 	Numbers    numbers.Numbers
-	Messaging  messaging.Messaging
+	Messaging  *messaging.Messaging
 	Verify     verify.Verify
 }
 

@@ -17,16 +17,17 @@ var e func(int, []byte) error = internal.E
 type Messaging struct {
 	Config     *Config
 	HttpClient *http.Client
+	WebHook    webHook
 }
 
 /*
 *	initializes messages with config
  */
-func InitMessaging(c *Config, hc *http.Client) Messaging {
+func InitMessaging(c *Config, hc *http.Client) *Messaging {
 	m := Messaging{}
 
 	m.Config = c
 	m.HttpClient = hc
 
-	return m
+	return &m
 }
