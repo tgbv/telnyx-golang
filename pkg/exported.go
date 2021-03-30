@@ -7,6 +7,7 @@ import (
 	"github.com/tgbv/telnyx-golang/internal"
 	"github.com/tgbv/telnyx-golang/internal/messaging"
 	"github.com/tgbv/telnyx-golang/internal/numbers"
+	"github.com/tgbv/telnyx-golang/internal/verify"
 )
 
 /*
@@ -17,6 +18,7 @@ type telnyx struct {
 	httpClient http.Client
 	Numbers    numbers.Numbers
 	Messaging  messaging.Messaging
+	Verify     verify.Verify
 }
 
 /*
@@ -55,7 +57,8 @@ func Init(cfg map[string]string) *telnyx {
 	// init messaging
 	s.Messaging = messaging.InitMessaging(&s.Config, &s.httpClient)
 
-	//
+	// init verify
+	s.Verify = verify.InitVerify(&s.Config, &s.httpClient)
 
 	return &s
 }
