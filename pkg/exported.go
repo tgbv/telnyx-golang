@@ -20,6 +20,7 @@ type telnyx struct {
 	Messaging  *messaging.Messaging
 	Verify     verify.Verify
 }
+type Telnyx = telnyx
 
 /*
 *	sets up config
