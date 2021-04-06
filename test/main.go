@@ -9,13 +9,13 @@ import (
 	tyx "github.com/tgbv/telnyx-golang/pkg"
 )
 
-const TARGET_PHONE = "+40731704463"
-const V1_TOKEN = "g7V8JstvT6azk5yKi7VjoA"
-const V2_TOKEN = "KEY01787CBA781BAE8414560A9421E7E34D_jYcYEw29htUYXzXN1J9kWH"
-const USER_EMAIL = "support@crypto-scam.io"
+const TARGET_PHONE = ""
+const V1_TOKEN = ""
+const V2_TOKEN = ""
+const USER_EMAIL = ""
 
-const MESSAGING_PROFILE = "4001787c-ba7a-480d-8d37-0c79fa2b52ab"
-const MESSAGING_VERIFICATION_PROFILE = "49000178-7d07-ad7c-9ed4-3f9592e3f025"
+const MESSAGING_PROFILE = ""
+const MESSAGING_VERIFICATION_PROFILE = ""
 
 func main() {
 
