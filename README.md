@@ -22,10 +22,6 @@ go get github.com/tgbv/telnyx-golang@d954fc469e692c1618c0c17609346d7c5b1d269c
 ```
 import tyx "github.com/tgbv/telnyx-golang/pkg"
 
-// Telnyx messaging verification profile
-// get from https://portal.telnyx.com/#/app/verify/profiles
-// const MESSAGING_VERIFICATION_PROFILE = ""
-
 Telnyx := tyx.init(map[string]interface{}{
   // Telnyx V1 token.
   // see https://portal.telnyx.com/#/app/api-tokens
