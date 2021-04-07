@@ -108,7 +108,7 @@ out, err := Tyx.Verify.Check("+1234567890", "some code")
 --------------
 - #### Query number information
 ```go
-out, err := Tyx.Numbers.Lookup(TARGET_PHONE)
+out, err := Tyx.Numbers.Lookup("+1234567890")
 ```
 
 - #### Retrieve messaging profiles
