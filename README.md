@@ -1,8 +1,6 @@
 # telnyx-golang
 Wrapper for Telnyx API written in Go
 
-**TIP**: use CTRL+F to lookup faster
-
 ## Features
 - [x] Send messages
 - [x] Receive messages
@@ -14,7 +12,7 @@ Wrapper for Telnyx API written in Go
 
 ## How to include
 
-```go
+```
 go get github.com/tgbv/telnyx-golang@d954fc469e692c1618c0c17609346d7c5b1d269c
 ```
 
